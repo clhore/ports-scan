@@ -46,7 +46,7 @@ function helpMenu(){
 # full Scan
 function fullScan(){
 	for port in {1..65535}; do
-		timeout 1 bash -c "echo '' > /dev/tcp/$ip_address/$port" 2>/dev/null && echo -e "\n\t${yellowColour}[${endColour}${turquoiseColour}*${endColour}${yellowColour}]${endColour} ${redColour}Port $port ${endColour}- ${grayColour}Puerto abierto${endColour}" &
+		timeout 1 bash -c "echo '' > /dev/tcp/$ip_address/$port" 2>/dev/null && echo -e "\n\t${yellowColour}[${endColour}${turquoiseColour}*${endColour}${yellowColour}]${endColour} ${redColour}Port $port ${endColour}- ${grayColour}Port Open${endColour}" &
 	done; wait
 }
 
@@ -54,7 +54,7 @@ function fullScan(){
 # personal Scan
 function personalScan(){
 	for port in "${priority_ports[@]}"; do
-        	timeout 1 bash -c "echo '' > /dev/tcp/$ip_address/$port" 2>/dev/null && echo -e "\n\t${yellowColour}[${endColour}${turquoiseColour}*${endColour}${yellowColour}]${endColour} ${redColour}Port $port ${endColour}- ${grayColour}Puerto abierto${endColour}" & 
+        	timeout 1 bash -c "echo '' > /dev/tcp/$ip_address/$port" 2>/dev/null && echo -e "\n\t${yellowColour}[${endColour}${turquoiseColour}*${endColour}${yellowColour}]${endColour} ${redColour}Port $port ${endColour}- ${grayColour}Port Open${endColour}" & 
       	done
 	sleep 0.5
 }
