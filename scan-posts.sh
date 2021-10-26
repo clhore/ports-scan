@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Author: clhore - aver cabeza almendra
+# Author: Adrian Lujan Muñoz - aka: clhore
 
 
 # Uso: chmod +x ./scan-ports.sh
