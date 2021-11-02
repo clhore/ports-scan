@@ -48,7 +48,7 @@ function fullScan(){
 	for port in {1..65535}; do
 		timeout 1 bash -c "echo '' > /dev/tcp/$ip_address/$port" 2>/dev/null
 		
-		if [ $(echo $?) -ne 0 ]; then
+		if [ $(echo $?) -eq 0 ]; then
 			echo -e "\n\t${yellowColour}[${endColour}${turquoiseColour}*${endColour}${yellowColour}]${endColour} ${redColour}Port $port ${endColour}- ${grayColour}Port Open${endColour}"
 		fi
 	done; wait
@@ -60,7 +60,7 @@ function personalScan(){
 	for port in "${priority_ports[@]}"; do
        		timeout 1 bash -c "echo '' > /dev/tcp/$ip_address/$port" 2>/dev/null
 		
-		if [ $(echo $?) -ne 0 ]; then
+		if [ $(echo $?) -eq 0 ]; then
 			echo -e "\n\t${yellowColour}[${endColour}${turquoiseColour}*${endColour}${yellowColour}]${endColour} ${redColour}Port $port ${endColour}- ${grayColour}Port Open${endColour}"
 		fi
 	done
